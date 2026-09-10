@@ -1,0 +1,14 @@
+{
+  "name": "Sawiji Studio Admin",
+  "short_name": "Sawiji",
+  "description": "Admin studio pilates: member, jadwal, booking, check-in, pembayaran, laporan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff9f4",
+  "theme_color": "#4a0012",
+  "lang": "id",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

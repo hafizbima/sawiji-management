@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-950: #4a0012;
+  --color-brand-900: #610018;
+  --color-brand-800: #7b0a24;
+  --color-brand-700: #941b36;
+  --color-rose-100: #f5d8c5;
+  --color-cream-50: #fff9f4;
+  --color-cream-100: #f9eee6;
+  --color-ink: #2c1a1e;
+  --color-muted: #7d6269;
+  --color-line: #eedcd1;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+body {
+  background-color: var(--color-cream-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* area scrollable: scrollbar selalu terlihat & bisa ditarik, swipe tidak bocor ke halaman */
+.overflow-x-auto {
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-brand-700) var(--color-cream-100);
+}
+.overflow-x-auto::-webkit-scrollbar {
+  height: 10px;
+  -webkit-appearance: none;
+  display: block;
+}
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+  border-radius: 999px;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: var(--color-brand-700);
+  border-radius: 999px;
+}
+
+/* Mobile (iPhone/Android): tabel data jadi kartu bertumpuk — tanpa perlu geser kanan-kiri */
+@media (max-width: 767px) {
+  .rtable {
+    min-width: 0 !important;
+  }
+  .rtable thead {
+    display: none;
+  }
+  .rtable,
+  .rtable tbody {
+    display: block;
+  }
+  .rtable tr {
+    display: block;
+    margin: 0 0 10px;
+    padding: 2px 14px;
+    background: var(--color-cream-50);
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+  }
+  .rtable tr:last-child {
+    margin-bottom: 0;
+  }
+  .rtable td {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    padding: 8px 0;
+    border: 0;
+    text-align: left;
+  }
+  .rtable td + td {
+    border-top: 1px dashed var(--color-line);
+  }
+}
+
+/* cegah iOS auto-zoom saat input difokus (font < 16px) */
+@media (max-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}

@@ -28,6 +28,28 @@ npm run build      # typecheck + build produksi
 npm run preview
 ```
 
+## Alur Branch (Pengembangan vs Produksi)
+
+| Branch | Peran |
+|---|---|
+| `main` | Pengembangan — fitur & perbaikan, bebas bereksperimen |
+| `production` | Versi live — hanya menerima perubahan yang sudah stabil |
+
+**Kerja harian:** commit & push ke `main`. **Rilis:** gabungkan `main` → `production`.
+
+```bash
+git checkout main
+git push origin main          # perubahan harian
+
+# rilis ke produksi
+git checkout production
+git merge main
+git push origin production
+```
+
+> Agar otomatis: hubungkan repo ini ke Vercel (Settings → Git) dan set **Production Branch = `production`**.
+> Setelah itu push ke `main` menghasilkan Preview Deployment, dan push ke `production` naik ke live.
+
 ## Mode Demo
 
 Jika `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` tidak diisi, aplikasi berjalan di **Mode Demo**:

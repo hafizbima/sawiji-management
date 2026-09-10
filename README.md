@@ -30,25 +30,25 @@ npm run preview
 
 ## Alur Branch (Pengembangan vs Produksi)
 
-| Branch | Peran |
-|---|---|
-| `main` | Pengembangan — fitur & perbaikan, bebas bereksperimen |
-| `production` | Versi live — hanya menerima perubahan yang sudah stabil |
+| Branch | Peran | Hasil deploy otomatis |
+|---|---|---|
+| `main` | Pengembangan — fitur & perbaikan, bebas bereksperimen | **Preview** (URL preview, tidak menyentuh live) |
+| `production` | Versi live — hanya menerima perubahan yang sudah stabil | **Production** → https://sawiji-demo.vercel.app |
 
 **Kerja harian:** commit & push ke `main`. **Rilis:** gabungkan `main` → `production`.
 
 ```bash
 git checkout main
-git push origin main          # perubahan harian
+git push origin main          # perubahan harian → preview otomatis
 
 # rilis ke produksi
 git checkout production
 git merge main
-git push origin production
+git push origin production    # → live otomatis
 ```
 
-> Agar otomatis: hubungkan repo ini ke Vercel (Settings → Git) dan set **Production Branch = `production`**.
-> Setelah itu push ke `main` menghasilkan Preview Deployment, dan push ke `production` naik ke live.
+Konfigurasi Vercel yang sudah aktif: repo terhubung, **Production Branch = `production`**.
+Ada juga Deploy Hook untuk branch `production` (memungkinkan memicu rilis tanpa push, mis. dari otomatisasi).
 
 ## Mode Demo
 

@@ -14,8 +14,9 @@ Tersedia di folder [`bisnis/`](bisnis) sebagai Markdown **dan PDF** siap kirim:
 | Penawaran | Surat penawaran resmi: ruang lingkup, harga, termin, S&K, tanda tangan | `bisnis/1-PENAWARAN.pdf` |
 | Katalog Harga | Price sheet: perbandingan paket, modul, add-on, FAQ | `bisnis/2-KATALOG-HARGA.pdf` |
 | Studi Kasus ROI | Perhitungan manfaat, payback, sensitivitas, lembar hitung sendiri | `bisnis/3-STUDI-KASUS-ROI.pdf` |
+| **Penjelasan Fitur & Flowchart** | 10 fitur dijabarkan satu per satu + diagram alur tiap fitur | [`FITUR-DAN-FLOWCHART.pdf`](FITUR-DAN-FLOWCHART.pdf) |
 
-Regenerasi PDF setelah mengubah markdown: `npm run bisnis`
+Regenerasi PDF setelah mengubah markdown: `npm run bisnis` · `npm run manual` · `npm run fitur`
 
 Dibangun dengan **React + Vite + TypeScript + Tailwind CSS**, dengan **Supabase** untuk autentikasi & database (opsional — aplikasi tetap bisa dijalankan dalam **Mode Demo** tanpa Supabase).
 
